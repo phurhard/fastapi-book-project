@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
       - name: 'install dependecies'
         run: |
-          "pip install -r requirements"
+          "pwd && ls && pip install -r requirements"
       - name: 'run test'
         run: pytest
 
