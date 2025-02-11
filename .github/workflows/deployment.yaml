@@ -1,0 +1,21 @@
+name: HNG stage 2 CICD task
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  # run the CI test
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      # checkout the code
+      - name: 'checkout code'
+        uses: actions/checkout@v4
+      - name: 'install dependecies'
+        run: |
+          pwd && ls && pip install -r requirements.txt
+      - name: 'run test'
+        run: pytest
+
